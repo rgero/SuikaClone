@@ -5,20 +5,24 @@ using UnityEngine;
 
 public class MouseTracker : MonoBehaviour
 {
-    public GameObject nextPiece;
+    public GameObject wall;
+    private GameObject nextPiece;
     public Transform parentContainer;
-    public List<GameObject> fruitList;
+    public List<GameObject> availableFruitToSpawn;
 
     private SpriteRenderer spriteRenderer;
     private float xOffset;
-    private float xOffsetStart = 60f;
+    private float xOffsetStart;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        float thickness = wall.transform.localScale.x / 2;
+        xOffsetStart = Math.Abs(wall.transform.position.x) - thickness;
+
         chooseRandomFruit();
-        this.xOffset = xOffsetStart - nextPiece.transform.localScale.x / 2 - 0.5f;
+        calculateClamp();
     }
 
     // Update is called once per frame
@@ -26,7 +30,7 @@ public class MouseTracker : MonoBehaviour
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.x = Mathf.Clamp(mousePosition.x, -xOffset, xOffset);
-        mousePosition.y = 95f;
+        mousePosition.y = 170f;
         mousePosition.z = 0;
         transform.position = mousePosition;
         
@@ -37,19 +41,23 @@ public class MouseTracker : MonoBehaviour
 
     }
 
+    void calculateClamp()
+    {
+        this.xOffset = xOffsetStart - nextPiece.transform.localScale.x / 2; // Wall thickness
+    }
+
     private void LaunchFruit(Transform mousePosition)
     {
+        this.parentContainer.GetComponent<FruitTracker>().incrementAge();
         GameObject newObject = Instantiate(nextPiece, parentContainer);
         newObject.transform.position = mousePosition.position;
-
-        this.parentContainer.GetComponent<FruitTracker>().incrementAge();
-
+        
         chooseRandomFruit();
     }
 
     private void chooseRandomFruit()
     {
-        nextPiece = fruitList[UnityEngine.Random.Range(0, fruitList.Count)];
+        nextPiece = availableFruitToSpawn[UnityEngine.Random.Range(0, availableFruitToSpawn.Count)];
         processFruitSprite();
     }
 
@@ -59,6 +67,6 @@ public class MouseTracker : MonoBehaviour
         spriteRenderer.sprite = nextPiece.GetComponent<SpriteRenderer>().sprite;
         spriteRenderer.color = nextPiece.GetComponent<SpriteRenderer>().color;
         this.transform.localScale = nextPiece.transform.localScale;
-        this.xOffset = xOffsetStart - nextPiece.transform.localScale.x / 2 - 0.5f; // Wall Thickness is 1.
+        calculateClamp();
     }
 }

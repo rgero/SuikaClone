@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Fruit : MonoBehaviour
+public class Fruit : MonoBehaviour
 {
     private string fruitName = string.Empty;
     public int age;
-    public GameObject nextFruitPrefab;
+    private FruitTracker tracker;
+    public int pointTotal;
 
     public void Awake()
     {
-        this.age = this.transform.parent.gameObject.GetComponent<FruitTracker>().getAge();
-    }
-
-    public void setName(string name)
-    {
-        this.fruitName = name;
+        tracker = this.transform.parent.gameObject.GetComponent<FruitTracker>();
+        this.age = tracker.getAge();
+        this.fruitName = this.gameObject.name.Split('(')[0];
+        this.gameObject.name = this.fruitName;
     }
 
     bool isSame(Fruit other)
@@ -47,14 +46,21 @@ public abstract class Fruit : MonoBehaviour
             // Check the Age 
             if(isOlder(newFruit))
             {
+                GameObject nextFruitPrefab = tracker.getNextFruit(this.gameObject);
+
+                if (nextFruitPrefab == null)
+                {
+                    Debug.Log("There's no fruit higher than this");
+                    return;
+                }
+
                 this.gameObject.SetActive(false);
                 collision.gameObject.SetActive(false);
 
-                // Get the Mid Distance
-                Vector3 midDistance = this.transform.position + ((this.transform.position - collision.transform.position) / 2);
+                this.tracker.incrementAge();
                 GameObject nextFruit = Instantiate(nextFruitPrefab, this.transform.parent);
-                nextFruit.transform.position = midDistance;
-
+                nextFruit.transform.position = collision.GetContact(0).point;
+                
                 Destroy(collision.gameObject);
                 Destroy(this.gameObject);
                

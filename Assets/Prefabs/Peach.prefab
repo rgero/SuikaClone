@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5135554652785736871
+--- !u!1001 &4111837858211862455
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6180023052006453826, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_Color.b
-      value: 0.922585
+      value: 0.5024643
       objectReference: {fileID: 0}
     - target: {fileID: 6180023052006453826, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.41233534
       objectReference: {fileID: 0}
     - target: {fileID: 6180023052006453826, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.7735849
       objectReference: {fileID: 0}
     - target: {fileID: 6841900944258055932, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_RootOrder
@@ -26,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6841900944258055932, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6841900944258055932, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6841900944258055932, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8626824462099504204, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_Name
-      value: Grape
+      value: Peach
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
