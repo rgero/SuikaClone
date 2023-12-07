@@ -302,6 +302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cherry
       objectReference: {fileID: 0}
+    - target: {fileID: 6178178018644901893, guid: 52715492143ec9746ba4acec8b795e00, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9004595199586509493, guid: 52715492143ec9746ba4acec8b795e00, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -677,6 +681,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Watermelon
       objectReference: {fileID: 0}
+    - target: {fileID: 8840718118958068323, guid: 75f241b8169951d44a29d392dee135c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9057385613830412934, guid: 75f241b8169951d44a29d392dee135c6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bdd706c2a0c6c9d4db43b0fbefe4244f, type: 3}
+    - target: {fileID: 9057385613830412934, guid: 75f241b8169951d44a29d392dee135c6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -737,6 +753,10 @@ PrefabInstance:
     - target: {fileID: 4497580757044480123, guid: 63021e78bff38e1449172ba0629c9836, type: 3}
       propertyPath: m_Name
       value: Strawberry
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497580757044480123, guid: 63021e78bff38e1449172ba0629c9836, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5560948936348761137, guid: 63021e78bff38e1449172ba0629c9836, type: 3}
       propertyPath: age
@@ -803,6 +823,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grape
       objectReference: {fileID: 0}
+    - target: {fileID: 3530123485809647851, guid: 394eed6ea8e0f2645b0c5f04dbf8ae8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4880614320877147297, guid: 394eed6ea8e0f2645b0c5f04dbf8ae8b, type: 3}
       propertyPath: age
       value: -1
@@ -828,6 +852,10 @@ PrefabInstance:
     - target: {fileID: 2161117671420939054, guid: bd5dc753a7ac3dd4894f10a4671fa742, type: 3}
       propertyPath: m_Name
       value: Blueberry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161117671420939054, guid: bd5dc753a7ac3dd4894f10a4671fa742, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3798265799725230494, guid: bd5dc753a7ac3dd4894f10a4671fa742, type: 3}
       propertyPath: m_RootOrder
@@ -894,6 +922,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pineapple
       objectReference: {fileID: 0}
+    - target: {fileID: 197400650399643578, guid: ad7272b293cbc8f48a846d1ae36c7bf6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3167927560210093322, guid: ad7272b293cbc8f48a846d1ae36c7bf6, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -955,6 +987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melon
       objectReference: {fileID: 0}
+    - target: {fileID: 1177400055911517868, guid: c28123bb5b4c61d4b8e9908caf4d16c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4115450652130274332, guid: c28123bb5b4c61d4b8e9908caf4d16c7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1015,6 +1051,10 @@ PrefabInstance:
     - target: {fileID: 5667935828235504635, guid: 0348b7ba4a413734db45327147a690f3, type: 3}
       propertyPath: m_Name
       value: Peach
+      objectReference: {fileID: 0}
+    - target: {fileID: 5667935828235504635, guid: 0348b7ba4a413734db45327147a690f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7485965645189851467, guid: 0348b7ba4a413734db45327147a690f3, type: 3}
       propertyPath: m_RootOrder
@@ -1129,6 +1169,10 @@ PrefabInstance:
     - target: {fileID: 8726461528051552336, guid: 573cbea6ecfb6854fac6c771dab56885, type: 3}
       propertyPath: m_Name
       value: Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726461528051552336, guid: 573cbea6ecfb6854fac6c771dab56885, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1533,6 +1577,10 @@ PrefabInstance:
     - target: {fileID: 8752002221092323227, guid: ad60f4c8693804340beed9ccf18fa683, type: 3}
       propertyPath: m_Name
       value: Apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752002221092323227, guid: ad60f4c8693804340beed9ccf18fa683, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

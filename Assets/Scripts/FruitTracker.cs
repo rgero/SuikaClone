@@ -21,9 +21,6 @@ public class FruitTracker : MonoBehaviour
     public GameObject getNextFruit(GameObject targetFruit)
     {
         int fruitIndex = fruitTiers.FindIndex(x => x.name == targetFruit.name);
-
-        Debug.Log(fruitIndex);
-
         if (fruitIndex + 1 < fruitTiers.Count)
         {
             return fruitTiers[fruitIndex + 1];

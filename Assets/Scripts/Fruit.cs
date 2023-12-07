@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Fruit : MonoBehaviour
 {
-    private string fruitName = string.Empty;
-    public int age;
-    private FruitTracker tracker;
     public int pointTotal;
+    public int age;
+    public AudioSource audioSource;
+
+    private string fruitName = string.Empty;
+    private FruitTracker tracker;
 
     public void Awake()
     {
@@ -15,6 +17,8 @@ public class Fruit : MonoBehaviour
         this.age = tracker.getAge();
         this.fruitName = this.gameObject.name.Split('(')[0];
         this.gameObject.name = this.fruitName;
+
+        this.audioSource = this.GetComponent<AudioSource>();
     }
 
     bool isSame(Fruit other)
@@ -60,6 +64,7 @@ public class Fruit : MonoBehaviour
                 this.tracker.incrementAge();
                 GameObject nextFruit = Instantiate(nextFruitPrefab, this.transform.parent);
                 nextFruit.transform.position = collision.GetContact(0).point;
+                nextFruit.GetComponent<AudioSource>().Play();
                 
                 Destroy(collision.gameObject);
                 Destroy(this.gameObject);
