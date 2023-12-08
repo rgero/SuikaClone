@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1824346547987783965, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
+      propertyPath: m_Radius
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180023052006453826, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
+      propertyPath: m_Size.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180023052006453826, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
+      propertyPath: m_Size.y
+      value: 2.56
+      objectReference: {fileID: 0}
     - target: {fileID: 6180023052006453826, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -30,19 +42,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6841900944258055932, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_LocalScale.x
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6841900944258055932, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_LocalScale.y
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6841900944258055932, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6841900944258055932, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6841900944258055932, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
       propertyPath: m_LocalPosition.z
@@ -80,72 +92,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Strawberry
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -1824346547987783965, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8626824462099504204, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5686517323723970064}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
---- !u!1 &4497580757044480123 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8626824462099504204, guid: e2afef5aa7d7e974fa7ad8093e035b17, type: 3}
-  m_PrefabInstance: {fileID: 5319383356550648887}
-  m_PrefabAsset: {fileID: 0}
---- !u!60 &5686517323723970064
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4497580757044480123}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.23117936, y: 0.31356588}
-      - {x: -0.3975498, y: 0.14666244}
-      - {x: -0.39474186, y: -0.024249114}
-      - {x: -0.2723726, y: -0.19406974}
-      - {x: -0.072976165, y: -0.46271315}
-      - {x: 0.08913345, y: -0.45738646}
-      - {x: 0.16814648, y: -0.34428293}
-      - {x: 0.38689643, y: -0.03373611}
-      - {x: 0.3735797, y: 0.1914064}
-      - {x: 0.26651296, y: 0.3135659}
-  m_UseDelaunayMesh: 0

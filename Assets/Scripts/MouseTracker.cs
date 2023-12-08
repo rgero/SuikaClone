@@ -14,8 +14,6 @@ public class MouseTracker : MonoBehaviour
     private float xOffset;
     private float xOffsetStart;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         float thickness = wall.transform.localScale.x / 2;
@@ -43,7 +41,7 @@ public class MouseTracker : MonoBehaviour
 
     void calculateClamp()
     {
-        this.xOffset = xOffsetStart - nextPiece.transform.localScale.x / 2; // Wall thickness
+        this.xOffset = xOffsetStart - nextPiece.transform.localScale.x;
     }
 
     private void LaunchFruit(Transform mousePosition)
