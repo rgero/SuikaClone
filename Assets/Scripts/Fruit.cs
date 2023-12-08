@@ -6,6 +6,8 @@ public class Fruit : MonoBehaviour
     public int age;
     public AudioSource audioSource;
     private string fruitName = string.Empty;
+    private float placedCooldown;
+    private bool isPlaced;
 
     public void Start()
     {
@@ -15,6 +17,20 @@ public class Fruit : MonoBehaviour
         this.pointTotal = FruitTracker.Instance.getFruitValue(this.gameObject);
 
         this.audioSource = this.GetComponent<AudioSource>();
+
+        placedCooldown = 5.0f;
+        isPlaced = false;
+    }
+
+    void Update()
+    {
+        if (isPlaced) return;
+
+        placedCooldown -= Time.deltaTime;
+        if (placedCooldown <= 0.0f)
+        {
+            isPlaced = true;
+        }
     }
 
     bool isSame(Fruit other)
@@ -70,5 +86,16 @@ public class Fruit : MonoBehaviour
                
             }
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D other) 
+    {
+        // Check if it's the death plane
+        if (other.gameObject.tag == "DeathPlane" && isPlaced)
+        {
+            Debug.Log("GAME OVER");
+            MouseTracker.Instance.setCanPlace(false);
+            // Process the end game logic here.
+        }    
     }
 }

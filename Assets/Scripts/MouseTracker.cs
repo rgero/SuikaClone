@@ -1,10 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseTracker : MonoBehaviour
 {
+    public static MouseTracker Instance { get; private set; }
+
     public GameObject wall;
     private GameObject nextPiece;
     public Transform parentContainer;
@@ -13,9 +14,19 @@ public class MouseTracker : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float xOffset;
     private float xOffsetStart;
+    private bool canPlace;
 
     void Start()
     {
+        if (Instance != null)
+        {
+            Debug.LogError("There's more than one MouseTracker! " + transform + " - " + Instance);
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        canPlace = true;
         float thickness = wall.transform.localScale.x / 2;
         xOffsetStart = Math.Abs(wall.transform.position.x) - thickness;
 
@@ -32,7 +43,7 @@ public class MouseTracker : MonoBehaviour
         mousePosition.z = 0;
         transform.position = mousePosition;
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canPlace)
         {
             LaunchFruit(this.transform);
         }
@@ -66,5 +77,10 @@ public class MouseTracker : MonoBehaviour
         spriteRenderer.color = nextPiece.GetComponent<SpriteRenderer>().color;
         this.transform.localScale = nextPiece.transform.localScale;
         calculateClamp();
+    }
+
+    public void setCanPlace(bool newValue)
+    {
+        this.canPlace = newValue;
     }
 }
