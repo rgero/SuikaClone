@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Fruit : MonoBehaviour
@@ -7,16 +5,14 @@ public class Fruit : MonoBehaviour
     public int pointTotal;
     public int age;
     public AudioSource audioSource;
-
     private string fruitName = string.Empty;
-    private FruitTracker tracker;
 
-    public void Awake()
+    public void Start()
     {
-        tracker = this.transform.parent.gameObject.GetComponent<FruitTracker>();
-        this.age = tracker.getAge();
+        this.age = FruitTracker.Instance.getAge();
         this.fruitName = this.gameObject.name.Split('(')[0];
         this.gameObject.name = this.fruitName;
+        this.pointTotal = FruitTracker.Instance.getFruitValue(this.gameObject);
 
         this.audioSource = this.GetComponent<AudioSource>();
     }
@@ -50,7 +46,7 @@ public class Fruit : MonoBehaviour
             // Check the Age 
             if(isOlder(newFruit))
             {
-                GameObject nextFruitPrefab = tracker.getNextFruit(this.gameObject);
+                GameObject nextFruitPrefab = FruitTracker.Instance.getNextFruit(this.gameObject);
 
                 if (nextFruitPrefab == null)
                 {
@@ -61,10 +57,13 @@ public class Fruit : MonoBehaviour
                 this.gameObject.SetActive(false);
                 collision.gameObject.SetActive(false);
 
-                this.tracker.incrementAge();
+                FruitTracker.Instance.incrementAge();
                 GameObject nextFruit = Instantiate(nextFruitPrefab, this.transform.parent);
                 nextFruit.transform.position = collision.GetContact(0).point;
                 nextFruit.GetComponent<AudioSource>().Play();
+
+                // Increment score.
+                ScoreContainer.Instance.incrementScore(this.pointTotal);
                 
                 Destroy(collision.gameObject);
                 Destroy(this.gameObject);
