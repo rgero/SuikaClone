@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Fruit : MonoBehaviour
@@ -94,7 +95,7 @@ public class Fruit : MonoBehaviour
         if (other.gameObject.tag == "DeathPlane" && isPlaced)
         {
             Debug.Log("GAME OVER");
-            MouseTracker.Instance.setCanPlace(false);
+            ScoreContainer.Instance.hasDied();
             // Process the end game logic here.
         }    
     }

@@ -26,12 +26,19 @@ public class MouseTracker : MonoBehaviour
         }
         Instance = this;
 
-        canPlace = true;
         float thickness = wall.transform.localScale.x / 2;
         xOffsetStart = Math.Abs(wall.transform.position.x) - thickness;
 
+        canPlace = true;
+        ScoreContainer.Instance.OnGameEnded += DisableClicking;
+
         chooseRandomFruit();
         calculateClamp();
+    }
+
+    private void DisableClicking(object sender, EventArgs e)
+    {
+        canPlace = false;
     }
 
     // Update is called once per frame
@@ -77,10 +84,5 @@ public class MouseTracker : MonoBehaviour
         spriteRenderer.color = nextPiece.GetComponent<SpriteRenderer>().color;
         this.transform.localScale = nextPiece.transform.localScale;
         calculateClamp();
-    }
-
-    public void setCanPlace(bool newValue)
-    {
-        this.canPlace = newValue;
     }
 }

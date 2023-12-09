@@ -4,9 +4,11 @@ using UnityEngine;
 public class ScoreContainer : MonoBehaviour
 {
     public static ScoreContainer Instance { get; private set; }
-    public int Score {get; private set;} 
+    public int Score {get; private set;}
+    public bool isAlive;
 
     public event EventHandler OnScoreChanged;
+    public event EventHandler OnGameEnded;
 
     void Start()
     {
@@ -18,11 +20,18 @@ public class ScoreContainer : MonoBehaviour
         }
         Instance = this;
         Score = 0;
+        isAlive = true;
     }
 
     public void incrementScore(int value)
     {
         Score += value;
         OnScoreChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void hasDied()
+    {
+        isAlive = false;
+        OnGameEnded.Invoke(this, EventArgs.Empty);
     }
 }

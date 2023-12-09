@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class FruitTracker : MonoBehaviour
 {
@@ -21,8 +24,10 @@ public class FruitTracker : MonoBehaviour
             return;
         }
         Instance = this;
+
+        ScoreContainer.Instance.OnGameEnded += FruitTracker_HasGameEnded;
     }
-    
+
     public int getAge()
     {
         return age;
@@ -52,5 +57,14 @@ public class FruitTracker : MonoBehaviour
         }
 
         return (fruitIndex + 1) * scoreConstant; // Offset for index
+    }
+
+    private void FruitTracker_HasGameEnded(object sender, EventArgs e)
+    {
+        foreach(Transform child in this.transform)
+        {
+            ScoreContainer.Instance.incrementScore(child.gameObject.GetComponent<Fruit>().pointTotal);
+            Destroy(child.gameObject);
+        }
     }
 }
