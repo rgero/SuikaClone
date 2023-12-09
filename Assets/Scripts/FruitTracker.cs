@@ -66,5 +66,7 @@ public class FruitTracker : MonoBehaviour
             ScoreContainer.Instance.incrementScore(child.gameObject.GetComponent<Fruit>().pointTotal);
             Destroy(child.gameObject);
         }
+
+        ScoreContainer.Instance.endGame();
     }
 }

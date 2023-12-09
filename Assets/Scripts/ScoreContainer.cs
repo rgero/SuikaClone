@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreContainer : MonoBehaviour
 {
@@ -33,5 +34,12 @@ public class ScoreContainer : MonoBehaviour
     {
         isAlive = false;
         OnGameEnded.Invoke(this, EventArgs.Empty);
+    }
+
+    internal void endGame()
+    {
+        PlayerPrefs.SetInt("SuikaScore", Score);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("GameOverScene");
     }
 }
