@@ -1,5 +1,4 @@
 # Suika Fruit
----
 
 This is a small project in which I quickly recreated the Suika Fruit game, a popular game that's on the Nintendo Switch and the Web. It was meant to be something that I worked on over the holidays.
 
