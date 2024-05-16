@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Suika Clone.sln"
+    "dotnet.defaultSolution": "SuikaClone.sln"
 }
